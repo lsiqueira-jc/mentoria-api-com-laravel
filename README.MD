@@ -1,4 +1,4 @@
-# Workshop API com Laravel
+# Mentoria - API Laravel
 
 ## Diretórios
 
