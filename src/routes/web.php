@@ -20,4 +20,4 @@ Route::get('/', function () {
 });
 
 
-Route::get('/cadastrar',[Noticias_DestaquesController::class,'novo']);
+// Route::get('/cadastrar',[Noticias_DestaquesController::class,'novo']);

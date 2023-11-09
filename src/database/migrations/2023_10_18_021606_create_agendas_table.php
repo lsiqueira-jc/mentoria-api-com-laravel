@@ -17,6 +17,7 @@ class CreateAgendasTable extends Migration
             $table->id();
             $table->string('nome')->nullable();
             $table->string('telefone')->nullable();
+            $table->string('email')->nullable();
             $table->timestamps();
         });
     }

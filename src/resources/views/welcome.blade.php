@@ -1,1 +1,1 @@
-<h1>Workshop API com laravel</h1>
+<h1>API com laravel</h1>

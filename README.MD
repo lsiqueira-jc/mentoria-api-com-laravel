@@ -31,3 +31,9 @@ docker exec -it agenda bash
 ```bash
 docker exec -it db_agenda bash
 ```
+
+### Se tiver problema no Windows
+
+```
+ --config core.autocrlf=input
+```
