@@ -17,7 +17,7 @@ docker-compose up --build -d
 ### Acessando a aplicação
 
 ```bash
-localhost
+localhost ou gp preview localhost --external
 ```
 
 ### Acessando o container da aplicação
