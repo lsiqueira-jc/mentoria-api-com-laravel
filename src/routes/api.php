@@ -24,7 +24,7 @@ Route::delete('/{id}',[AgendaController::class ,'delete']);
 
 
 
-// Route::post('/logar',[Tokencontroller::class ,'index']);
+Route::post('/logar',[Tokencontroller::class ,'index']);
 
 
 // Route::group(['middleware' => ['JWTToken']], function () {
