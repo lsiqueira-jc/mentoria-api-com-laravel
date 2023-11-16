@@ -26,7 +26,8 @@ class AgendaRequest extends FormRequest
             'required'         => 'O :attribute é obrigatório.',
             'max'              => 'O :attribute ultrapassa o quantidade maxima de caracteres permitida.',
             'min'              => 'O :attribute não tem a quantidade minima de caracteres permitida.',
-            'unique'           => 'o :attribute já está cadastrado.'
+            'unique'           => 'o :attribute já está cadastrado.',
+            'email'           => 'o :attribute é invalido.'
         ];
     }
 
@@ -47,8 +48,9 @@ class AgendaRequest extends FormRequest
     public function rules()
     {
         return [
-            // ''   => 'required',
-            // ''  => 'required|unique:agendas',
+            'nome'   => 'required',
+            'telefone'  => 'required|min:9|max:9',
+            'email'  => 'required|email|unique:agenda'
         ];
     }
 }
