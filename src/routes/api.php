@@ -7,7 +7,7 @@ use App\Http\Controllers\Tokencontroller;
 use App\Http\Controllers\AgendaController;
 
 
-Route::post('/',[AgendaController::class ,'cadastrar']);
+//Route::post('/',[AgendaController::class ,'cadastrar']);
 
 Route::get('/',[AgendaController::class ,'listar']);
 
@@ -15,6 +15,7 @@ Route::get('/{id}',[AgendaController::class ,'show']);
 
 Route::delete('/{id}',[AgendaController::class ,'delete']);
 
+Route::put('/{id}',[AgendaController::class ,'atualizar']);
 
 
 
@@ -23,11 +24,17 @@ Route::delete('/{id}',[AgendaController::class ,'delete']);
 
 
 
-// Route::post('/logar',[Tokencontroller::class ,'index']);
 
 
-// Route::group(['middleware' => ['JWTToken']], function () {
-// });
+
+ Route::post('/logar',[Tokencontroller::class ,'index']);
+
+
+Route::group(['middleware' => ['JWTToken']], function () {
+
+    Route::post('/',[AgendaController::class ,'cadastrar']);
+
+});
 
 
 
