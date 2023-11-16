@@ -6,17 +6,21 @@ use Illuminate\Http\Request;
 
 use App\Models\Agenda;
 
-// use App\Http\Requests\ExemploRequest;
+use App\Http\Requests\AgendaRequest;
 
 class AgendaController extends Controller
 {
 
-    public function cadastrar(Request $request){
+    public function cadastrar(AgendaRequest $request){
         $nome = $request->input('nome');
+        $telefone = $request->input('telefone');
+        $email = $request->input('email');
 
 
         $agenda = new Agenda();
         $agenda->nome = $nome;
+        $agenda->telefone = $telefone ;
+        $agenda->email= $email;
         $agenda->save();
 
         return response()->json([
@@ -51,6 +55,31 @@ class AgendaController extends Controller
 
         return response()->json([
             "agenda deletada com sucesso"
+        ],200);
+
+    }
+
+    public function atualizar($id,AgendaRequest $request) {
+        $nome = $request->input('nome');
+        $telefone = $request->input('telefone');
+        $email = $request->input('email');
+
+        $agenda = Agenda::find($id);
+
+        if(!$agenda){
+            return response()->json([
+                "Registro não encontrado."
+            ],200);
+        }
+
+        $agenda->nome = $nome;
+        $agenda->telefone = $telefone ;
+        $agenda->email= $email;
+        $agenda->save();
+
+
+        return response()->json([
+            "data"    => $agenda
         ],200);
 
     }
